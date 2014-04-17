@@ -21,17 +21,17 @@ public class Tst extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 		if (action.equals(ACTION_SEND_SMS)) {
-			try {
+			//try {
 				if (!checkSupport()) {
 					callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, "SMS not supported on this platform"));
 				} else {
 				    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, "SMS is supported on this platform"));
 				}
 				return true;
-			}
-			catch (JSONException ex) {
-				callbackContext.sendPluginResult(new PluginResult( PluginResult.Status.JSON_EXCEPTION));
-			}			
+			//}
+			//catch (JSONException ex) {
+			//	callbackContext.sendPluginResult(new PluginResult( PluginResult.Status.JSON_EXCEPTION));
+			//}
 		}
 		return false;
 	}
