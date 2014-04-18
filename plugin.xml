@@ -7,6 +7,7 @@
     <description>Cordova Tst Stuzo Plugin</description>
     <license>MIT</license>
     <keywords>cordova,phonegap</keywords>
+    <repo>https://github.com/dtsymbal/tst.git</repo>
 
     <engines>
       <engine name="cordova" version=">=3.0.0" />
