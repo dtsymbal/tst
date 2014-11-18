@@ -25,10 +25,9 @@ do
         gitStatus=$(git status -s | grep $fileToCreate)
         if [[ -n gitStatus ]];
         then
-	        echo $gitStatus
-	        git add $directory/$fileToCreate
+	        echo "Generated $directory/$fileToCreate from $directory/$configFile."
+            git add $directory/$fileToCreate
 	        git commit -m "generated $fileToCreate"
-	        #push=1
         fi
     fi
 done
@@ -36,12 +35,3 @@ done
 git push
 exit 0
 
-if [ $push == 1 ];
-then
-	git push --no-verify
-	echo 'Pushed by pre-push hook. Current push canceled.'
-	exit 1;
-else
-    echo 'ELSE'
-	exit 0;
-fi

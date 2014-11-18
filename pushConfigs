@@ -2,11 +2,9 @@
 
 branch=$(git branch | grep \* | tr -d '\*\ ')
 directory=.
-readlink -f $directory
 push=0
 filesToCreate=(config.xml config.html)
 
-echo $branch
 if [[ $branch == 'master' ]];
 then
     files=(config-dev.xml config-dev.html)
@@ -23,9 +21,10 @@ do
     then
         cp $directory/$configFile $directory/$fileToCreate
         gitStatus=$(git status -s | grep $fileToCreate)
+echo $gitStatus
         if [[ -n gitStatus ]];
         then
-	        echo "Generated $directory/$fileToCreate from $directory/$configFile."
+	        echo "Generated $direlctory/$fileToCreate from $directory/$configFile."
             git add $directory/$fileToCreate
 	        git commit -m "generated $fileToCreate"
         fi
