@@ -28,12 +28,13 @@ do
 	        echo $gitStatus
 	        git add $directory/$fileToCreate
 	        git commit -m "generated $fileToCreate"
-	        push=1
+	        #push=1
         fi
     fi
 done
 
-echo $push
+git push
+exit 0
 
 if [ $push == 1 ];
 then
